@@ -1,11 +1,18 @@
-html{
-	height: 100%;
-	width: 100%;
+/* 整体布局 */
+html {
+  height: 100%;
+  width: 100%;
 }
 
-body{
-	margin: 0;
-	padding: 0;
-	height: 100%;
-	width: 100%;
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
 }

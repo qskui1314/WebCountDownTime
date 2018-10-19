@@ -4,22 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome,firefox">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome">
   <title>元旦倒计时</title>
   <link type="text/css" href="css/global.css" rel="stylesheet" />
-  <script type="text/javascript" src="js/global.js"></script>
+  <script type="text/javascript" src="js/CountDownTime.js"></script>
 </head>
 
 <body onload="time()">
   <!--加载js-->
-  <table width="100%" border="1" height="50px">
-    <tr>
-      <!--输出日期-->
-      <td id="time1"></td>
-      <td id="time2"></td>
-  </table>
-
-  <canvas id="canvas" style="height:50%; width: 50%;">
+  <img src="img/CNKI_Logo.png" alt="CNKI_Logo" width="400px" height="150px" style="margin-left:10%;margin-top:30px;" />
+  <div id="cc" style="margin-left:10%"></div>
+  <canvas id="canvas" style="height:75%; width:75%;  float:inherit;">
     当前浏览器不支持Canvas，请更换浏览器后再试
   </canvas>
   <script type="text/javascript" src="js/digit.js"></script>
