@@ -9,8 +9,8 @@ var MARGIN_LEFT = 30;
 //倒计时结束时间
 //var endTime = new Date();
 //endTime.setTime(endTime.getTime() + 36000 * 1000); //设置倒计时为十个小时
-//var endTime = new Date('2019/1/1 00:00:00');//最终时间设定为2019年元旦
-var endTime = new Date('2018/10/23 17:30:00'); //最终时间设定为2019年元旦
+var endTime = new Date('2019/1/1 00:00:00');//最终时间设定为2019年元旦
+//var endTime = new Date('2018/10/25 17:30:00'); //最终时间设定为2019年元旦
 var curShowTimeSeconds = 0; //倒计时时间中扣除的
 //随机小球的颜色
 var balls = [];
@@ -64,28 +64,28 @@ function update() {
       addBalls(MARGIN_LEFT + 0, MARGIN_TOP, parseInt(curDays / 10));
     }
     if (parseInt(curDays % 10) != parseInt(nextDays % 10)) {
-      addBalls(MARGIN_LEFT + 15 * (RADIUS + 1), MARGIN_TOP, parseInt(curDays / 10));
+      addBalls(MARGIN_LEFT + 13 * (RADIUS + 1), MARGIN_TOP, parseInt(curDays % 10));
     }
     //代表小时的两个数字
     if (parseInt(curHours / 10) != parseInt(nextHours / 10)) {
-      addBalls(MARGIN_LEFT + 39, MARGIN_TOP, parseInt(curHours / 10));
+      addBalls(MARGIN_LEFT + 33, MARGIN_TOP, parseInt(curHours / 10));
     }
     if (parseInt(curHours % 10) != parseInt(nextHours % 10)) {
-      addBalls(MARGIN_LEFT + 54 * (RADIUS + 1), MARGIN_TOP, parseInt(curHours % 10));
+      addBalls(MARGIN_LEFT + 48 * (RADIUS + 1), MARGIN_TOP, parseInt(curHours % 10));
     }
     //代表分钟的两个数字
     if (parseInt(curMinutes / 10) != parseInt(nextMinutes / 10)) {
-      addBalls(MARGIN_LEFT + 78 * (RADIUS + 1), MARGIN_TOP, parseInt(curMinutes / 10));
+      addBalls(MARGIN_LEFT + 69 * (RADIUS + 1), MARGIN_TOP, parseInt(curMinutes / 10));
     }
     if (parseInt(curMinutes % 10) != parseInt(nextMinutes % 10)) {
-      addBalls(MARGIN_LEFT + 93 * (RADIUS + 1), MARGIN_TOP, parseInt(curMinutes % 10));
+      addBalls(MARGIN_LEFT + 84 * (RADIUS + 1), MARGIN_TOP, parseInt(curMinutes % 10));
     }
     //代表秒的两个数字
     if (parseInt(curSeconds / 10) != parseInt(nextSeconds / 10)) {
-      addBalls(MARGIN_LEFT + 117 * (RADIUS + 1), MARGIN_TOP, parseInt(curSeconds / 10));
+      addBalls(MARGIN_LEFT + 104 * (RADIUS + 1), MARGIN_TOP, parseInt(curSeconds / 10));
     }
     if (parseInt(curSeconds % 10) != parseInt(nextSeconds % 10)) {
-      addBalls(MARGIN_LEFT + 135 * (RADIUS + 1), MARGIN_TOP, parseInt(nextSeconds % 10));
+      addBalls(MARGIN_LEFT + 119 * (RADIUS + 1), MARGIN_TOP, parseInt(nextSeconds % 10));
     }
     curShowTimeSeconds = nextShowTimeSeconds;
   }
@@ -140,16 +140,16 @@ function render(cxt) {
   var minutes = parseInt((curShowTimeSeconds - hours * 3600) / 60)
   var seconds = curShowTimeSeconds % 60
   renderDigit(MARGIN_LEFT, MARGIN_TOP, parseInt(days / 10), cxt)
-  renderDigit(MARGIN_LEFT + 15 * (RADIUS + 1), MARGIN_TOP, parseInt(days % 10), cxt)
-  renderDigit(MARGIN_LEFT + 30 * (RADIUS + 1), MARGIN_TOP, 10, cxt) /*冒号*/
-  renderDigit(MARGIN_LEFT + 39 * (RADIUS + 1), MARGIN_TOP, parseInt(hours / 10), cxt);
-  renderDigit(MARGIN_LEFT + 54 * (RADIUS + 1), MARGIN_TOP, parseInt(hours % 10), cxt);
-  renderDigit(MARGIN_LEFT + 69 * (RADIUS + 1), MARGIN_TOP, 10, cxt);
-  renderDigit(MARGIN_LEFT + 78 * (RADIUS + 1), MARGIN_TOP, parseInt(minutes / 10), cxt);
-  renderDigit(MARGIN_LEFT + 93 * (RADIUS + 1), MARGIN_TOP, parseInt(minutes % 10), cxt);
-  renderDigit(MARGIN_LEFT + 108 * (RADIUS + 1), MARGIN_TOP, 10, cxt);
-  renderDigit(MARGIN_LEFT + 117 * (RADIUS + 1), MARGIN_TOP, parseInt(seconds / 10), cxt);
-  renderDigit(MARGIN_LEFT + 135 * (RADIUS + 1), MARGIN_TOP, parseInt(seconds % 10), cxt);
+  renderDigit(MARGIN_LEFT + 13 * (RADIUS + 1), MARGIN_TOP, parseInt(days % 10), cxt)
+  renderDigit(MARGIN_LEFT + 26 * (RADIUS + 1), MARGIN_TOP, 10, cxt) /*冒号*/
+  renderDigit(MARGIN_LEFT + 33 * (RADIUS + 1), MARGIN_TOP, parseInt((hours%24) / 10), cxt);
+  renderDigit(MARGIN_LEFT + 48 * (RADIUS + 1), MARGIN_TOP, parseInt((hours%24) % 10), cxt);
+  renderDigit(MARGIN_LEFT + 61 * (RADIUS + 1), MARGIN_TOP, 10, cxt);
+  renderDigit(MARGIN_LEFT + 69 * (RADIUS + 1), MARGIN_TOP, parseInt(minutes / 10), cxt);
+  renderDigit(MARGIN_LEFT + 84 * (RADIUS + 1), MARGIN_TOP, parseInt(minutes % 10), cxt);
+  renderDigit(MARGIN_LEFT + 97 * (RADIUS + 1), MARGIN_TOP, 10, cxt);
+  renderDigit(MARGIN_LEFT + 104 * (RADIUS + 1), MARGIN_TOP, parseInt(seconds / 10), cxt);
+  renderDigit(MARGIN_LEFT + 119 * (RADIUS + 1), MARGIN_TOP, parseInt(seconds % 10), cxt);
   for (var i = 0; i < balls.length; i++) {
     cxt.fillStyle = balls[i].color;
     cxt.beginPath();
