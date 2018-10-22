@@ -9,6 +9,7 @@ var MARGIN_LEFT = 30;
 //倒计时结束时间
 //endTime.setTime(endTime.getTime() + 36000 * 1000); //设置倒计时为十个小时
 var endTime = new Date('2019/1/1 00:00:00');//最终时间设定为2019年元旦
+//var endTime = new Date('2018/10/25 17:30:00'); //最终时间设定为2019年元旦
 var curShowTimeSeconds = 0; //倒计时时间中扣除的
 //随机小球的颜色
 var balls = [];
