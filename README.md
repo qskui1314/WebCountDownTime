@@ -2,7 +2,9 @@
 
     A simplely website,it's is to show a countdown time from now to setted time.   
     It's written in html,css and javascript.   
-    You can set finish time in line 12 of countdown.js.   
+    You can set finish time in line 12 of countdown.js.     
+
+    Canvas支持的的个性动态小球掉落倒计时，在countdown.js的第12行可以设置倒计时结束时间。
 
 ---
 
